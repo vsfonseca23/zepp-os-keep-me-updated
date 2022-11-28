@@ -1,0 +1,5 @@
+msgid "new"
+msgstr "NEW"
+
+msgid "delete"
+msgstr "DELETE"
