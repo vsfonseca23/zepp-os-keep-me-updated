@@ -1,0 +1,65 @@
+{
+  "configVersion": "v2",
+  "app": {
+    "appId": 230787,
+    "appName": "Keep me updated",
+    "appType": "app",
+    "version": {
+      "code": 1,
+      "name": "1.0.0"
+    },
+    "icon": "icon.png",
+    "vender": "Vinícius Fonseca",
+    "description": "Easy way to get updated with the latest news."
+  },
+  "permissions": [],
+  "runtime": {
+    "apiVersion": {
+      "compatible": "1.0.0",
+      "target": "1.0.1",
+      "minVersion": "1.0.0"
+    }
+  },
+  "debug": false,
+  "targets": {   
+    "gts4-mini": {
+      "module": {
+        "page": {
+          "pages": [
+            "page/gts4-mini/home/index.page"
+          ],
+          "window": {
+            "navigationBarBackgroundColor": "#ffffff",
+            "navigationBarTextStyle": "black",
+            "navigationBarTitleText": "Home",
+            "backgroundColor": "#eeeeee",
+            "backgroundTextStyle": "light"
+          }
+        },
+        "app-side": {
+          "path": "app-side/index"
+        },
+        "setting": {
+          "path": "setting/index"
+        }
+      },
+      "platforms": [
+        {
+          "name": "gts4-mini",
+          "deviceSource": 246
+        },
+        {
+          "name": "gts4-mini-w",
+          "deviceSource": 247
+        }
+      ],
+      "designWidth": 390
+    }
+  },
+  "i18n": {
+    "en-US": {
+      "appName": "Keep me updated"
+    }
+  },
+  "defaultLanguage": "en-US"
+}

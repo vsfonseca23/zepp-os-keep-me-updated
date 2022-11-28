@@ -1,0 +1,7 @@
+
+msgid "appName"
+msgstr "Keep me updated"
+
+msgid "aboutMsg"
+msgstr "Easy way to get updated with the latest news."
+

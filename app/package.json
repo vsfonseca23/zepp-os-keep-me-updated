@@ -1,0 +1,14 @@
+{
+  "name": "zepp-os-keep-me-updated",
+  "version": "1.0.0",
+  "description": "Easy way to get updated with the latest news",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@zeppos/device-types": "^1.0.0"
+  }
+}
