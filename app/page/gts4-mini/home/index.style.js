@@ -12,3 +12,15 @@ export const HELLO_WORLD_TEXT = {
   align_v: hmUI.align.CENTER,
   text_style: hmUI.text_style.WRAP,
 }
+
+
+export const LOADING_TEXT = {
+  x: 0,
+  y: 150,
+  text_size: 36,
+  text: getText("loadingMsg"),
+  color: 0xffffff,
+  align_h: hmUI.align.CENTER,
+  align_v: hmUI.align.CENTER,
+  text_style: hmUI.text_style.WRAP,
+}

@@ -5,3 +5,5 @@ msgstr "Keep me updated"
 msgid "aboutMsg"
 msgstr "Easy way to get updated with the latest news."
 
+msgid "loadingMsg"
+msgstr "Obtaining latest news..."
