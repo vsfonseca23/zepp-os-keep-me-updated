@@ -3,3 +3,4 @@ export const DEFAULT_RSS_FEEDS = [
 ]
 
 export const LOADING_ANIM_SIZE = 64
+export const COMMAND_REQUEST_NEWS = "RequestNewsCommand"
