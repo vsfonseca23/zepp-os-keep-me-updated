@@ -1,3 +1,4 @@
+import { LOADING_ANIM_SIZE } from "../../../utils/constants"
 import { LOADING_TEXT } from "./index.style"
 
 const logger = DeviceRuntimeCore.HmLogger.getLogger('keep-me-updated')
@@ -24,40 +25,22 @@ Page({
       anim_size: 60,
       repeat_count: 0,
       anim_status: hmUI.anim_status.START,
-      x: (deviceInfo.width / 2) - 32, //image of 64px
-      y: (deviceInfo.height / 2) - 32,//image of 64px     
+      x: (deviceInfo.width / 2) - (LOADING_ANIM_SIZE / 2),
+      y: (deviceInfo.height / 2) - LOADING_ANIM_SIZE, 
     })
 
-    // const timer1 = timer.createTimer(
-    //   0,
-    //   1000,
-    //   function (option) {
-    //     const isRunning = imgAnimation.getProperty(hmUI.prop.ANIM_IS_RUNINNG)
-    //     const isPaused = imgAnimation.getProperty(hmUI.prop.ANIM_IS_PAUSE)
-    //     const isStopped = imgAnimation.getProperty(hmUI.prop.ANIM_IS_STOP)
-    //     const status = imgAnimation.getProperty(hmUI.prop.anim_status)
+    const { width, height } = hmUI.getTextLayout(LOADING_TEXT.text, {
+      text_size: 36,
+      text_width: deviceInfo.width,
+      wrapped: 1
+    })
 
-    //     // if (isRunning)
-    //     //   imgAnimation.setProperty(hmUI.prop.ANIM_STATUS, hmUI.anim_status.PAUSE)
-    //     // else
-    //     //   imgAnimation.setProperty(hmUI.prop.ANIM_STATUS, hmUI.anim_status.RESUME)
-
-    //     logger.debug("isRunning", isRunning, "isPaused", isPaused, "isStopped", isStopped, "status", status)
-    //   },
-    //   {}
-    // )
-
-    // const { width, height } = hmUI.getTextLayout(LOADING_TEXT.text, {
-    //   text_size: 36,
-    //   text_width: deviceInfo.width,
-    //   wrapped: 1
-    // })
-
-    // hmUI.createWidget(hmUI.widget.TEXT, {
-    //   ...LOADING_TEXT,
-    //   w: width,
-    //   h: height
-    // })
+    hmUI.createWidget(hmUI.widget.TEXT, {
+      ...LOADING_TEXT,
+      y: (deviceInfo.height / 2) + 20,
+      w: deviceInfo.width,
+      h: height
+    })
 
     logger.debug("finished Page.build")
   },
