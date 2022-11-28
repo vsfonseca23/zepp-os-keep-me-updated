@@ -1,3 +1,6 @@
 
 msgid "connectionSuccessMessage"
 msgstr "Connected sucessfully!"
+
+msgid "commandNotFoundMessage"
+msgstr "Command not found!"
