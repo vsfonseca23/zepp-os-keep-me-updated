@@ -24,11 +24,23 @@ AppSideService({
         for (let i = 0; i < feeds.length; i++) {
           await fetch(feeds[i])
             .then((data) => {
-              let firstDescription = extractInnerValueFromXML(data.body, "description")
-              allNewsFeeds.push(firstDescription)
+              let feedItem = extractInnerValueFromXML(data.body, "item")
+              if (feedItem) {
+                let itemTag = "<item>" + feedItem + "</item>"
+                do {
+                  let feedTitle = extractInnerValueFromXML(feedItem, "title")
+                  let feedDescription = extractInnerValueFromXML(feedItem, "description")
+
+                  allNewsFeeds.push(feedTitle)
+
+                  data.body = data.body.replace(itemTag, '')
+                  feedItem = extractInnerValueFromXML(data.body, "item")
+                  itemTag = "<item>" + feedItem + "</item>"
+
+                } while (feedItem !== undefined)
+              }
             })
         }
-        
         ctx.response({ data: allNewsFeeds })
       }
       else
@@ -42,5 +54,5 @@ AppSideService({
     return settings.settingsStorage.getItem('rssFeeds')
       ? JSON.parse(settings.settingsStorage.getItem('rssFeeds'))
       : [...DEFAULT_RSS_FEEDS]
-  }
+  }  
 })
