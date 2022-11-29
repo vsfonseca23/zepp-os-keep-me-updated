@@ -1,22 +1,28 @@
 import { gettext as getText } from 'i18n'
 
-export const LOADING_TEXT = {
-  x: 0,
-  y: 150,
-  text_size: 36,
-  text: getText("loadingMsg"),
-  color: 0xffffff,
-  align_h: hmUI.align.CENTER_H,
-  align_v: hmUI.align.CENTER_V,
-  text_style: hmUI.text_style.WRAP,
+const deviceInfo = hmSetting.getDeviceInfo()
+const PADDING = px(10)
+
+export const NEWS_BUTTON = {
+  x: px(0),
+  y: px(80),
+  w: deviceInfo.width,
+  h: px(80),
+  text: getText("newsButton"),
+  text_size: px(36),
+  normal_color: 0x305EE4,
+  press_color: 0x21419f,
+  click_func: () => { hmApp.gotoPage({ url: "page/gts4-mini/news/news.page" }) }
 }
 
-export const NEWS_TEXT = {
-  x: 0,
-  y: 20,
-  text_size: 36,
-  color: 0xffffff,
-  align_h: hmUI.align.LEFT,
-  align_v: hmUI.align.TOP,
-  text_style: hmUI.text_style.WRAP,
+export const ABOUT_BUTTON = {
+  x: px(0),
+  y: NEWS_BUTTON.y + NEWS_BUTTON.h + PADDING,
+  w: deviceInfo.width,
+  h: px(80),
+  text: getText("aboutButton"),
+  text_size: px(36),
+  normal_color: 0x305EE4,
+  press_color: 0x21419f,
+  click_func: () => { hmApp.gotoPage({ url: "page/gts4-mini/about/about.page" }) }
 }

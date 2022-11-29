@@ -3,7 +3,16 @@ msgid "appName"
 msgstr "Keep me updated"
 
 msgid "aboutMsg"
-msgstr "Easy way to get updated with the latest news."
+msgstr "A smart way to get updated with the latest news.\n\nDeveloped by Vinícius Fonseca."
 
 msgid "loadingMsg"
 msgstr "Loading..."
+
+msgid "newsButton"
+msgstr "G1 News"
+
+msgid "aboutButton"
+msgstr "About"
+
+msgid "backButton"
+msgstr "Back"

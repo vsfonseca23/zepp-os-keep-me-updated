@@ -26,7 +26,9 @@
       "module": {
         "page": {
           "pages": [
-            "page/gts4-mini/home/index.page"
+            "page/gts4-mini/home/index.page",
+            "page/gts4-mini/about/about.page",
+            "page/gts4-mini/news/news.page"
           ],
           "window": {
             "navigationBarBackgroundColor": "#ffffff",
