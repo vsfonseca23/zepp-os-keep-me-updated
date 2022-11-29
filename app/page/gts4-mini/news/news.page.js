@@ -21,14 +21,8 @@ Page({
   },
   build() {
     logger.debug("called Page.build")
-
     this.showLoading()
     this.requestNews()
-
-    hmUI.createWidget(hmUI.widget.BUTTON, {
-      y: this.state.lastRenderedNewsY + this.state.lastRenderedNewsH + PADDING,
-      ...BACK_BUTTON,
-    })
   },
   onDestroy() {
     logger.debug("called Page.onDestroy")
@@ -127,6 +121,11 @@ Page({
         this.state.lastRenderedNewsY = currentNewsY
         this.state.lastRenderedNewsH = height + rectH + PADDING
       }
+
+      hmUI.createWidget(hmUI.widget.BUTTON, {
+        y: this.state.lastRenderedNewsY + this.state.lastRenderedNewsH + PADDING,
+        ...BACK_BUTTON,
+      })
     }
   }
 })
