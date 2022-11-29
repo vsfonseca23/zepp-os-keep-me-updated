@@ -3,6 +3,7 @@ import { LOADING_TEXT, NEWS_TEXT } from "./index.style"
 
 const logger = DeviceRuntimeCore.HmLogger.getLogger('keep-me-updated')
 const { messageBuilder } = getApp()._options.globalData
+
 const deviceInfo = hmSetting.getDeviceInfo()
 
 Page({
@@ -23,8 +24,6 @@ Page({
 
     this.showLoading()
     this.requestNews()
-
-    logger.debug("finished Page.build")
   },
   onDestroy() {
     logger.debug("called Page.onDestroy")
@@ -75,7 +74,7 @@ Page({
         command: COMMAND_REQUEST_NEWS
       })
       .then((data) => {
-        logger.debug("news received", data)
+        logger.debug("received data", data)
         this.state.news = data
         this.showNews()
       })
@@ -83,12 +82,13 @@ Page({
   showNews() {
     logger.debug("called Page.showNews")
 
-    if (this.state.news) {
+    if (this.state.news.length && this.state.news.length > 0) {
       this.hideLoading()
 
       for (let i = 0; i < this.state.news.length; i++) {
 
         const currentNews = this.state.news[i]
+
         let currentNewsY = 50
         const padding = 20
 
@@ -116,7 +116,7 @@ Page({
           x: 0,
           y: rectY,
           w: deviceInfo.width,
-          h: rectH,          
+          h: rectH,
           color: 0x03a9fc
         })
 
